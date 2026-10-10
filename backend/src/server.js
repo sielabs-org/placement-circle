@@ -10,7 +10,6 @@ const app = createApp();
 const server = app.listen(config.port, () => {
   console.log(`\nPlacement Circle is running  ->  http://localhost:${config.port}`);
   console.log(`API health check             ->  http://localhost:${config.port}/api/health`);
-  if (!config.smtp.host) console.log('SMTP not configured: signup OTP codes will be printed in this console.');
   console.log('');
 });
 

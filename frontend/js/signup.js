@@ -1,12 +1,9 @@
 /* =====================================================
-   SIGNUP  (2 steps)
-   1. sendOTP()   -> backend validates the form and emails a 6-digit code
-   2. verifyOTP() -> backend checks the code, creates the account
-                     and logs the user in (httpOnly cookie)
+   SIGNUP  (single step, no OTP)
+   Submitting the form sends the details to the backend, which
+   creates the account. We show a success message and
+   send the user to the login page.
 ===================================================== */
-
-var otpEmail = "";
-var resendTimer = null;
 
 function $(id) {
     return document.getElementById(id);
@@ -18,54 +15,14 @@ function showError(message) {
     $("formError").hidden = false;
 }
 
-function showInfo(message) {
-    $("formError").hidden = true;
-    $("formInfo").textContent = message;
-    $("formInfo").hidden = false;
-}
-
 function clearMessages() {
     $("formError").hidden = true;
     $("formInfo").hidden = true;
 }
 
-/* Disable "Resend" for a few seconds (the server enforces this too) */
-function startResendCooldown(seconds) {
-    var button = $("resendBtn");
-    clearInterval(resendTimer);
-    button.disabled = true;
+function signup(event) {
 
-    function tick() {
-        if (seconds <= 0) {
-            clearInterval(resendTimer);
-            button.disabled = false;
-            button.textContent = "Resend code";
-            return;
-        }
-        button.textContent = "Resend code in " + seconds + "s";
-        seconds--;
-    }
-
-    tick();
-    resendTimer = setInterval(tick, 1000);
-}
-
-function showOtpStep(data) {
-    otpEmail = data.email;
-    $("otpStep").hidden = false;
-    $("sendOtpBtn").textContent = "Change details & resend";
-    showInfo(data.message);
-    startResendCooldown(data.resendAfterSeconds || 60);
-    $("otp").focus();
-
-    /* Only present when the server runs with DEV_EXPOSE_OTP=true */
-    if (data.devOtp) {
-        showInfo(data.message + " (dev code: " + data.devOtp + ")");
-    }
-}
-
-function sendOTP() {
-
+    event.preventDefault();
     clearMessages();
 
     const fullName = $("fullName").value.trim();
@@ -85,13 +42,8 @@ function sendOTP() {
         return;
     }
 
-    if (!password) {
-        showError("Please enter a password.");
-        return;
-    }
-
-    if (!confirmPassword) {
-        showError("Please confirm your password.");
+    if (password.length < 8 || !/[A-Za-z]/.test(password) || !/[0-9]/.test(password)) {
+        showError("Password must be at least 8 characters and include a letter and a number.");
         return;
     }
 
@@ -100,66 +52,29 @@ function sendOTP() {
         return;
     }
 
-    const button = $("sendOtpBtn");
-    Api.busy(button, true, "Sending...");
+    const button = $("signupBtn");
+    Api.busy(button, true, "Creating account...");
 
-    Api.post("/api/auth/signup/request-otp", {
+    Api.post("/api/auth/signup", {
         fullName: fullName,
         email: email,
         password: password,
         branch: branch,
         year: year
     })
-        .then(function (data) {
-            Api.busy(button, false);
-            showOtpStep(data);
-        })
-        .catch(function (err) {
-            Api.busy(button, false);
-            showError(err.message);
-        });
-}
-
-function verifyOTP() {
-
-    clearMessages();
-
-    const otp = $("otp").value.trim();
-
-    if (!/^\d{6}$/.test(otp)) {
-        showError("Enter the 6-digit code from your email.");
-        return;
-    }
-
-    const button = $("verifyBtn");
-    Api.busy(button, true, "Verifying...");
-
-    Api.post("/api/auth/signup/verify", { email: otpEmail, otp: otp })
         .then(function () {
-            window.location.href = "dashboard.html";
+            $("formInfo").textContent = "Account created successfully! Redirecting to login...";
+            $("formInfo").hidden = false;
+            setTimeout(function () {
+                window.location.href = "login.html";
+            }, 1500);
         })
         .catch(function (err) {
             Api.busy(button, false);
-            showError(err.message);
-        });
-}
-
-function resendOTP() {
-
-    clearMessages();
-
-    Api.post("/api/auth/signup/resend-otp", { email: otpEmail })
-        .then(showOtpStep)
-        .catch(function (err) {
             showError(err.message);
         });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    /* Pressing Enter in the code box verifies */
-    $("otp").addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-            verifyOTP();
-        }
-    });
+    $("signupForm").addEventListener("submit", signup);
 });

@@ -26,7 +26,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
 }
 
@@ -45,7 +45,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 
@@ -58,7 +58,7 @@ body {
 .navbar a {
     text-decoration: none;
     color: white;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
 }
 
@@ -107,7 +107,7 @@ body {
 
     color: #9184ff;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
 
     margin-bottom: 28px;
@@ -141,7 +141,7 @@ body {
 
     color: #a6a9c0;
 
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.7;
 
     margin-bottom: 28px;
@@ -171,7 +171,7 @@ body {
         #c342ef
     );
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
 
     box-shadow: 0 10px 25px rgba(120, 75, 255, 0.3);
@@ -192,7 +192,7 @@ body {
 
     border: 1px solid #303348;
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -209,7 +209,7 @@ body {
 
     color: #9fa3bb;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .features div {
@@ -252,13 +252,13 @@ body {
 
 .mission-header p {
     color: #969bae;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 1px;
 }
 
 .streak {
     color: #ffb700;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -313,13 +313,13 @@ body {
 }
 
 .mission-info h3 {
-    font-size: 13px;
+    font-size: 16px;
     margin-bottom: 4px;
 }
 
 .mission-info p {
     color: #8d91a7;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -337,12 +337,12 @@ body {
     align-items: center;
     justify-content: center;
 
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .arrow {
     color: #d0d3df;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -368,13 +368,13 @@ body {
 }
 
 .stat h2 {
-    font-size: 17px;
+    font-size: 19px;
     margin-bottom: 5px;
 }
 
 .stat p {
     color: #85899f;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 1px;
 }
 

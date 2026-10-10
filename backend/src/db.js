@@ -87,20 +87,6 @@ CREATE TABLE IF NOT EXISTS users (
   created_at      TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
--- Signups waiting for OTP verification (no real account exists yet)
-CREATE TABLE IF NOT EXISTS pending_signups (
-  email         TEXT PRIMARY KEY COLLATE NOCASE,
-  full_name     TEXT NOT NULL,
-  password_hash TEXT NOT NULL,
-  branch        TEXT NOT NULL DEFAULT '',
-  year          TEXT NOT NULL DEFAULT '',
-  otp_hash      TEXT NOT NULL,
-  expires_at    INTEGER NOT NULL,
-  attempts      INTEGER NOT NULL DEFAULT 0,
-  last_sent_at  INTEGER NOT NULL,
-  created_at    TEXT NOT NULL DEFAULT (datetime('now'))
-);
-
 CREATE TABLE IF NOT EXISTS questions (
   id           INTEGER PRIMARY KEY AUTOINCREMENT,
   title        TEXT NOT NULL,

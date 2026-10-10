@@ -1,10 +1,8 @@
 'use strict';
 process.env.NODE_ENV = 'test';
 process.env.DB_PATH = ':memory:';
-process.env.DEV_EXPOSE_OTP = 'true';
 process.env.ADMIN_EMAIL = 'admin@college.edu';
 process.env.ADMIN_PASSWORD = 'Admin@12345';
-// DEV_EXPOSE_OTP only works when not production; NODE_ENV=test is fine.
 
 const { test, before, after } = require('node:test');
 const assert = require('node:assert/strict');
@@ -40,11 +38,9 @@ function client() {
 }
 
 async function signup(c, name, email, extra = {}) {
-  const r = await c.post('/api/auth/signup/request-otp', { fullName: name, email, password: 'Secret123', branch: 'CSE', year: 'Final Year', ...extra });
-  assert.equal(r.status, 200, JSON.stringify(r.body));
-  const v = await c.post('/api/auth/signup/verify', { email, otp: r.body.devOtp });
-  assert.equal(v.status, 201, JSON.stringify(v.body));
-  return v.body.user;
+  const r = await c.post('/api/auth/signup', { fullName: name, email, password: 'Secret123', branch: 'CSE', year: 'Final Year', ...extra });
+  assert.equal(r.status, 201, JSON.stringify(r.body));
+  return r.body.user;
 }
 
 before(async () => {
@@ -66,43 +62,25 @@ test('health works and API requires login', async () => {
   assert.equal((await c.get('/api/nope')).status, 404);
 });
 
-test('signup: validation, OTP flow, cooldown, wrong code, duplicate email', async () => {
+test('signup: validation, instant account + login, duplicate email', async () => {
   const c = client();
-  const weak = await c.post('/api/auth/signup/request-otp', { fullName: 'Riya Shah', email: 'riya@college.edu', password: 'short' });
+  const weak = await c.post('/api/auth/signup', { fullName: 'Riya Shah', email: 'riya@college.edu', password: 'short' });
   assert.equal(weak.status, 400);
 
-  const ok = await c.post('/api/auth/signup/request-otp', { fullName: 'Riya Shah', email: 'Riya@College.edu', password: 'Secret123', branch: 'IT', year: '3rd Year' });
-  assert.equal(ok.status, 200);
-  assert.match(ok.body.devOtp, /^\d{6}$/);
-
-  assert.equal((await c.post('/api/auth/signup/request-otp', { fullName: 'Riya Shah', email: 'riya@college.edu', password: 'Secret123' })).status, 429, 'resend cooldown');
-
-  const wrong = await c.post('/api/auth/signup/verify', { email: 'riya@college.edu', otp: ok.body.devOtp === '123456' ? '654321' : '123456' });
-  assert.equal(wrong.status, 400);
-  assert.match(wrong.body.error, /Incorrect code/);
-
-  const done = await c.post('/api/auth/signup/verify', { email: 'riya@college.edu', otp: ok.body.devOtp });
-  assert.equal(done.status, 201);
+  const done = await c.post('/api/auth/signup', { fullName: 'Riya Shah', email: 'Riya@College.edu', password: 'Secret123', branch: 'IT', year: '3rd Year' });
+  assert.equal(done.status, 201, 'account is created immediately, no OTP step');
   assert.equal(done.body.user.email, 'riya@college.edu');
   assert.equal(done.body.user.initials, 'RS');
   assert.equal(done.body.user.subtitle, 'IT · 3rd Year');
   assert.equal(done.body.user.passwordHash, undefined);
 
-  assert.equal((await c.get('/api/auth/me')).body.user.fullName, 'Riya Shah');
+  assert.equal((await c.get('/api/auth/me')).body.user.fullName, 'Riya Shah', 'user is logged in right after signup');
 
-  const dup = await client().post('/api/auth/signup/request-otp', { fullName: 'Riya Again', email: 'riya@college.edu', password: 'Secret123' });
+  const dup = await client().post('/api/auth/signup', { fullName: 'Riya Again', email: 'riya@college.edu', password: 'Secret123' });
   assert.equal(dup.status, 409);
-});
 
-test('signup: OTP locks after too many wrong attempts', async () => {
-  const c = client();
-  const r = await c.post('/api/auth/signup/request-otp', { fullName: 'Lock Test', email: 'lock@college.edu', password: 'Secret123' });
-  const bad = r.body.devOtp === '000000' ? '111111' : '000000';
-  let last;
-  for (let i = 0; i < 5; i++) last = await c.post('/api/auth/signup/verify', { email: 'lock@college.edu', otp: bad });
-  assert.equal(last.status, 400);
-  const locked = await c.post('/api/auth/signup/verify', { email: 'lock@college.edu', otp: r.body.devOtp });
-  assert.equal(locked.status, 429, 'even the right code is refused after lockout');
+  const oldRoute = await client().post('/api/auth/signup/request-otp', { fullName: 'X Y', email: 'x@college.edu', password: 'Secret123' });
+  assert.equal(oldRoute.status, 401, 'the old OTP routes no longer exist');
 });
 
 test('login / logout', async () => {

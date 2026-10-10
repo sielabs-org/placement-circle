@@ -106,7 +106,7 @@ body {
 }
 
 .logo-text {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
 
     color: #f5f7fb;
@@ -144,7 +144,7 @@ body {
 
     color: #aab3c5;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
 
     transition: 0.2s ease;
@@ -155,7 +155,7 @@ body {
 
     margin-right: 5px;
 
-    font-size: 15px;
+    font-size: 17px;
 
     display: flex;
     align-items: center;
@@ -210,7 +210,7 @@ body {
 
     color: #aab3c5;
 
-    font-size: 12px;
+    font-size: 15px;
 
     text-align: left;
 
@@ -280,7 +280,7 @@ body {
 
     color: #d4d9e4;
 
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .notification:hover {
@@ -310,7 +310,7 @@ body {
 
     color: #8d7bff;
 
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
 }
 
@@ -322,13 +322,13 @@ body {
 }
 
 .profile-info strong {
-    font-size: 11px;
+    font-size: 14px;
 
     color: #f3f4f7;
 }
 
 .profile-info span {
-    font-size: 9px;
+    font-size: 13px;
 
     color: #9099aa;
 
@@ -364,7 +364,7 @@ body {
 }
 
 .page-header h1 {
-    font-size: 21px;
+    font-size: 23px;
     font-weight: 800;
     letter-spacing: -0.5px;
     color: #ffffff;
@@ -373,7 +373,7 @@ body {
 
 .page-header p {
     color: #9aa4b8;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .grid {
@@ -399,7 +399,7 @@ body {
 }
 
 .card h3 {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     color: #ffffff;
 
@@ -433,8 +433,8 @@ body {
 .ring {
     position: relative;
 
-    width: 96px;
-    height: 96px;
+    width: 136px;
+    height: 136px;
 
     margin: 4px 0 16px;
 }
@@ -470,14 +470,14 @@ body {
 }
 
 .ring-text strong {
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 800;
     color: #ffffff;
 }
 
 .ring-text span {
-    font-size: 6px;
-    letter-spacing: 0.1em;
+    font-size: 13px;
+    letter-spacing: 0.06em;
     color: #8993a5;
     margin-top: 2px;
 }
@@ -495,13 +495,13 @@ body {
 .mini-stats strong {
     display: block;
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 800;
     color: #ffffff;
 }
 
 .mini-stats span {
-    font-size: 6.5px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     color: #8993a5;
 }
@@ -521,7 +521,7 @@ body {
 
     padding-right: 7px;
 
-    font-size: 7px;
+    font-size: 13px;
     color: #9aa4b8;
 
     height: 100px;
@@ -569,7 +569,7 @@ body {
 
     margin-top: 5px;
 
-    font-size: 7px;
+    font-size: 13px;
     color: #9aa4b8;
 }
 
@@ -589,7 +589,7 @@ body {
 }
 
 .h-label {
-    font-size: 7px;
+    font-size: 13px;
     color: #9aa4b8;
     text-align: right;
 
@@ -624,7 +624,7 @@ body {
 
     transform: translateX(-50%);
 
-    font-size: 7px;
+    font-size: 13px;
     color: #9aa4b8;
 }
 
@@ -655,7 +655,7 @@ body {
     display: flex;
     gap: 14px;
 
-    font-size: 7.5px;
+    font-size: 13px;
     color: #e5e9f2;
 }
 
@@ -685,7 +685,7 @@ body {
 
     padding: 6px 0;
 
-    font-size: 9px;
+    font-size: 13px;
     color: #f1f3f9;
 
     border-bottom: 1px solid #1b2231;

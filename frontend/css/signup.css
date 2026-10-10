@@ -44,7 +44,7 @@ body {
     align-items: center;
     gap: 9px;
 
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 700;
 
     z-index: 10;
@@ -112,7 +112,7 @@ body {
 .left-content h1 {
     max-width: 550px;
 
-    font-size: 34px;
+    font-size: 36px;
     line-height: 1.2;
 
     letter-spacing: -1.3px;
@@ -136,7 +136,7 @@ body {
 .left-content p {
     color: #969bb3;
 
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
 
     max-width: 450px;
@@ -153,7 +153,7 @@ body {
 
     color: #9ca2c0;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -174,7 +174,7 @@ body {
 
 .signup-form {
     width: 100%;
-    max-width: 350px;
+    max-width: 430px;
 
     margin-top: 5px;
 }
@@ -183,7 +183,7 @@ body {
 /* ================= HEADING ================= */
 
 .signup-form h2 {
-    font-size: 23px;
+    font-size: 32px;
     line-height: 1.2;
 
     margin-bottom: 5px;
@@ -194,7 +194,7 @@ body {
 .subtitle {
     color: #8e94ad;
 
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5;
 
     margin-bottom: 27px;
@@ -206,7 +206,7 @@ body {
 label {
     display: block;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
 
     margin-bottom: 7px;
@@ -221,11 +221,11 @@ input {
     display: block;
 
     width: 100%;
-    height: 34px;
+    height: 50px;
 
     margin-bottom: 18px;
 
-    padding: 0 12px;
+    padding: 0 16px;
 
     border-radius: 10px;
     border: 1px solid #2b3042;
@@ -236,7 +236,7 @@ input {
 
     outline: none;
 
-    font-size: 13px;
+    font-size: 16px;
 
     transition: 0.2s;
 }
@@ -253,15 +253,15 @@ input:focus {
 select {
     display: block;
     width: 100%;
-    height: 34px;
+    height: 50px;
     margin-bottom: 18px;
-    padding: 0 10px;
+    padding: 0 16px;
     border-radius: 10px;
     border: 1px solid #2b3042;
     background: #0b0e17;
     color: white;
     outline: none;
-    font-size: 13px;
+    font-size: 16px;
     transition: 0.2s;
 }
 
@@ -270,19 +270,25 @@ select:focus {
     box-shadow: 0 0 0 2px rgba(128, 93, 246, 0.1);
 }
 
+.field-hint {
+    margin: -6px 0 14px;
+    font-size: 16px;
+    color: #9aa0b8;
+}
+
 .field-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
 
-/* ================= MESSAGES + OTP STEP ================= */
+/* ================= MESSAGES ================= */
 .form-error,
 .form-info {
     margin: -4px 0 14px;
     padding: 9px 12px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.4;
 }
 
@@ -299,62 +305,30 @@ select:focus {
 }
 
 .form-error[hidden],
-.form-info[hidden],
-.otp-step[hidden] {
+.form-info[hidden] {
     display: none;
 }
 
-.otp-step {
-    margin-top: 18px;
-}
-
-#otp {
-    letter-spacing: 8px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.otp-btn:disabled {
+.signup-btn:disabled {
     opacity: 0.7;
     cursor: wait;
     transform: none;
 }
 
-.link-btn {
-    display: block;
-    margin: 12px auto 0;
-    background: none;
-    border: none;
-    color: #7c6cff;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-}
+/* ================= SIGNUP BUTTON ================= */
 
-.link-btn:hover:not(:disabled) {
-    color: #c04bef;
-}
-
-.link-btn:disabled {
-    color: #6b7088;
-    cursor: default;
-}
-
-/* ================= OTP BUTTON ================= */
-
-.otp-btn {
+.signup-btn {
     display: block;
 
     width: 100%;
-    height: 40px;
+    height: 52px;
 
     border: none;
     border-radius: 22px;
 
     color: white;
 
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
 
     cursor: pointer;
@@ -371,7 +345,7 @@ select:focus {
     transition: 0.2s;
 }
 
-.otp-btn:hover {
+.signup-btn:hover {
     transform: translateY(-1px);
 
     box-shadow:
@@ -388,11 +362,11 @@ select:focus {
 
     color: #9297ad;
 
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .login-text a {
-    color: #7c6cff;
+    color: #9a8cff;
 
     text-decoration: none;
 
@@ -450,7 +424,7 @@ select:focus {
 @media (max-width: 500px) {
 
     .left-content h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .signup-right {

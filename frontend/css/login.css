@@ -52,7 +52,7 @@ body {
     align-items: center;
     gap: 9px;
 
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
 
     z-index: 5;
@@ -146,7 +146,7 @@ body {
 }
 
 .left-content h1 {
-    font-size: 34px;
+    font-size: 36px;
     line-height: 1.18;
 
     font-weight: 700;
@@ -174,7 +174,7 @@ body {
 .left-content p {
     max-width: 450px;
 
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.55;
 
     color: #8fa1bf;
@@ -189,7 +189,7 @@ body {
     left: 40px;
     bottom: 37px;
 
-    font-size: 11px;
+    font-size: 14px;
 
     color: #8fa1bf;
 }
@@ -212,7 +212,7 @@ body {
 
 .login-form-container {
     width: 100%;
-    max-width: 350px;
+    max-width: 430px;
 
     margin-top: 5px;
 }
@@ -221,7 +221,7 @@ body {
 /* ================= HEADING ================= */
 
 .login-form-container h2 {
-    font-size: 23px;
+    font-size: 32px;
     line-height: 1.2;
 
     margin-bottom: 5px;
@@ -230,7 +230,7 @@ body {
 }
 
 .subtitle {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5;
 
     color: #8fa1bf;
@@ -250,7 +250,7 @@ body {
 
     margin-bottom: 7px;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
 
     color: #ffffff;
@@ -260,9 +260,9 @@ body {
     display: block;
 
     width: 100%;
-    height: 34px;
+    height: 50px;
 
-    padding: 0 12px;
+    padding: 0 16px;
 
     border: 1px solid #293244;
     border-radius: 10px;
@@ -273,13 +273,13 @@ body {
 
     color: white;
 
-    font-size: 13px;
+    font-size: 16px;
 
     transition: 0.2s;
 }
 
 .form-group input::placeholder {
-    color: #5e6b82;
+    color: #8a93a6;
 }
 
 .form-group input:focus {
@@ -296,7 +296,7 @@ body {
     display: block;
 
     width: 100%;
-    height: 40px;
+    height: 52px;
 
     border: none;
     border-radius: 22px;
@@ -309,7 +309,7 @@ body {
 
     color: white;
 
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
 
     cursor: pointer;
@@ -332,7 +332,7 @@ body {
 
     margin-top: 24px;
 
-    font-size: 12px;
+    font-size: 15px;
 
     color: #8fa1bf;
 }
@@ -398,7 +398,7 @@ body {
     }
 
     .left-content h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .bottom-text {
@@ -423,7 +423,7 @@ body {
     }
 
     .left-content h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 }
 
@@ -436,7 +436,7 @@ body {
     border: 1px solid rgba(248, 113, 113, 0.35);
     background: rgba(248, 113, 113, 0.08);
     color: #fca5a5;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.4;
 }
 

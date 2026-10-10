@@ -29,11 +29,10 @@ node src/seed.js --demo     # fake students so the leaderboard isn't empty
 npm test                    # 14 API tests
 ```
 
-## Signup / OTP
-Signup is two steps: the form emails a 6-digit code, then the code creates the account.
-Without SMTP configured the code is **printed in the server console**. To send real email, copy
-`backend/.env.example` to `backend/.env` and fill in `SMTP_*`. Use `ALLOWED_EMAIL_DOMAINS=college.edu`
-to restrict signups to your college.
+## Signup
+Signup is a single step: fill in the form and the account is created and logged in immediately
+(there is no OTP / email verification). Use `ALLOWED_EMAIL_DOMAINS=college.edu` in `backend/.env`
+to restrict signups to your college email addresses.
 
 ## Configuration (`backend/.env`)
 | Variable | Purpose |
@@ -41,11 +40,10 @@ to restrict signups to your college.
 | `JWT_SECRET` | **Required in production** (32+ random chars: `openssl rand -hex 32`) |
 | `APP_TIMEZONE` | Day boundary for streaks/daily mission (default `Asia/Kolkata`) |
 | `ADMIN_EMAIL` / `ADMIN_PASSWORD` | Creates an admin on startup (for `/api/admin/*`) |
-| `SMTP_*`, `MAIL_FROM` | Email delivery for OTPs |
 | `DB_PATH`, `PORT`, `CORS_ORIGIN`, `TRUST_PROXY` | Deployment options (see `.env.example`) |
 
 ## API overview (all under `/api`, cookie auth)
-- **Auth:** `POST /auth/signup/request-otp`, `/auth/signup/verify`, `/auth/signup/resend-otp`, `/auth/login`, `/auth/logout`, `GET /auth/me`
+- **Auth:** `POST /auth/signup`, `/auth/login`, `/auth/logout`, `GET /auth/me`
 - **Practice:** `GET /questions`, `GET /questions/:id`, `POST /questions/:id/attempt`, `GET /daily`
 - **Me:** `GET /dashboard`, `GET /progress`, `GET|PUT /profile`
 - **Community:** `GET /leaderboard?scope=overall|branch|year`, `GET /opportunities`, `GET|POST /experiences`, `POST /experiences/:id/helpful`, `DELETE /experiences/:id`

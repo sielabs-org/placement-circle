@@ -57,14 +57,14 @@
 
         <section class="signup-right">
 
-            <div class="signup-form">
+            <form class="signup-form" id="signupForm" novalidate>
 
                 <h2>
                     Create your account
                 </h2>
 
                 <p class="subtitle">
-                    Use your college email — we'll send a 6-digit code.
+                    Use your college email. It takes less than a minute.
                 </p>
 
 
@@ -111,6 +111,7 @@
                     autocomplete="new-password"
                     required
                 >
+                <p class="field-hint">At least 8 characters, with a letter and a number.</p>
 
 
                 <!-- CONFIRM PASSWORD -->
@@ -162,47 +163,14 @@
                 <p class="form-error" id="formError" role="alert" hidden></p>
                 <p class="form-info" id="formInfo" hidden></p>
 
-                <!-- SEND OTP -->
+                <!-- CREATE ACCOUNT -->
                 <button
-                    type="button"
-                    class="otp-btn"
-                    id="sendOtpBtn"
-                    onclick="sendOTP()"
+                    type="submit"
+                    class="signup-btn"
+                    id="signupBtn"
                 >
-                    Send OTP
+                    Create account
                 </button>
-
-                <!-- OTP STEP (shown after the code is emailed) -->
-                <div class="otp-step" id="otpStep" hidden>
-                    <label for="otp">
-                        6-digit code
-                    </label>
-                    <input
-                        type="text"
-                        id="otp"
-                        name="otp"
-                        inputmode="numeric"
-                        autocomplete="one-time-code"
-                        maxlength="6"
-                        placeholder="______"
-                    >
-                    <button
-                        type="button"
-                        class="otp-btn"
-                        id="verifyBtn"
-                        onclick="verifyOTP()"
-                    >
-                        Verify &amp; create account
-                    </button>
-                    <button
-                        type="button"
-                        class="link-btn"
-                        id="resendBtn"
-                        onclick="resendOTP()"
-                    >
-                        Resend code
-                    </button>
-                </div>
 
 
                 <!-- LOGIN -->
@@ -217,7 +185,7 @@
 
                 </p>
 
-            </div>
+            </form>
 
         </section>
 

@@ -98,7 +98,7 @@
 .get-started,
 .start-btn,
 .login-btn,
-.otp-btn {
+.signup-btn {
     transition:
         transform 0.2s var(--pc-ease),
         box-shadow 0.2s ease,
@@ -112,7 +112,7 @@
 .get-started:hover,
 .start-btn:hover,
 .login-btn:hover,
-.otp-btn:hover {
+.signup-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 10px 22px -10px var(--pc-glow);
 }
@@ -126,7 +126,7 @@
 .get-started:active,
 .start-btn:active,
 .login-btn:active,
-.otp-btn:active,
+.signup-btn:active,
 .filter-btn:active,
 .type-btn:active,
 .scope-btn:active,

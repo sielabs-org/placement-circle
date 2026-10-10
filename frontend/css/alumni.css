@@ -106,7 +106,7 @@ body {
 }
 
 .logo-text {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
 
     color: #f5f7fb;
@@ -144,7 +144,7 @@ body {
 
     color: #aab3c5;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
 
     transition: 0.2s ease;
@@ -155,7 +155,7 @@ body {
 
     margin-right: 5px;
 
-    font-size: 15px;
+    font-size: 17px;
 
     display: flex;
     align-items: center;
@@ -210,7 +210,7 @@ body {
 
     color: #aab3c5;
 
-    font-size: 12px;
+    font-size: 15px;
 
     text-align: left;
 
@@ -280,7 +280,7 @@ body {
 
     color: #d4d9e4;
 
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .notification:hover {
@@ -310,7 +310,7 @@ body {
 
     color: #8d7bff;
 
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
 }
 
@@ -322,13 +322,13 @@ body {
 }
 
 .profile-info strong {
-    font-size: 11px;
+    font-size: 14px;
 
     color: #f3f4f7;
 }
 
 .profile-info span {
-    font-size: 9px;
+    font-size: 13px;
 
     color: #9099aa;
 
@@ -371,7 +371,7 @@ body {
 }
 
 .page-header h1 {
-    font-size: 23px;
+    font-size: 25px;
     line-height: 1.15;
     font-weight: 800;
     letter-spacing: -0.6px;
@@ -381,7 +381,7 @@ body {
 
 .page-header p {
     color: #9aa4b8;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .add-btn {
@@ -400,7 +400,7 @@ body {
 
     color: #ffffff;
     font-family: inherit;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
 
     cursor: pointer;
@@ -451,7 +451,7 @@ body {
     outline: none;
 
     color: #e9edf5;
-    font-size: 10px;
+    font-size: 13px;
     font-family: inherit;
 
     transition: 0.2s;
@@ -519,19 +519,19 @@ body {
     justify-content: center;
 
     color: #ffffff;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
 }
 
 .company-name {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
     color: #ffffff;
     line-height: 1.2;
 }
 
 .company-role {
-    font-size: 9px;
+    font-size: 13px;
     color: #9aa4b8;
     margin-top: 2px;
 }
@@ -544,12 +544,12 @@ body {
     background: #1c2232;
     color: #e5e9f2;
 
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 600;
 }
 
 .person {
-    font-size: 9px;
+    font-size: 13px;
     color: #8993a5;
 
     margin-bottom: 8px;
@@ -571,12 +571,12 @@ body {
     background: #1c2232;
     color: #e5e9f2;
 
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 500;
 }
 
 .story-tip {
-    font-size: 10.5px;
+    font-size: 13px;
     line-height: 1.5;
 
     color: #f1f3f9;
@@ -587,7 +587,7 @@ body {
 .story-full {
     display: none;
 
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.6;
 
     color: #aab3c5;
@@ -623,7 +623,7 @@ body {
     color: #8993a5;
 
     font-family: inherit;
-    font-size: 9px;
+    font-size: 13px;
 
     cursor: pointer;
     transition: color 0.2s;
@@ -657,7 +657,7 @@ body {
     color: #8f78ff;
 
     font-family: inherit;
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 600;
 
     cursor: pointer;
@@ -674,7 +674,7 @@ body {
     padding: 60px 20px;
 
     color: #8993a5;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .empty-state.show {
@@ -719,12 +719,12 @@ body {
 }
 
 .modal h2 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 3px;
 }
 
 .modal-sub {
-    font-size: 11px;
+    font-size: 14px;
     color: #9aa4b8;
     margin-bottom: 16px;
 }
@@ -744,7 +744,7 @@ body {
 }
 
 .field label {
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 600;
     color: #aab3c5;
 }
@@ -762,7 +762,7 @@ body {
 
     color: #e9edf5;
     font-family: inherit;
-    font-size: 11px;
+    font-size: 14px;
 
     outline: none;
 }
@@ -782,7 +782,7 @@ body {
     display: none;
 
     color: #f87171;
-    font-size: 10px;
+    font-size: 13px;
 
     margin-bottom: 10px;
 }
@@ -809,7 +809,7 @@ body {
 
     color: #aab3c5;
     font-family: inherit;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
 
     cursor: pointer;
@@ -829,7 +829,7 @@ body {
 
     color: #ffffff;
     font-family: inherit;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
 
     cursor: pointer;

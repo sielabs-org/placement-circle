@@ -106,7 +106,7 @@ body {
 }
 
 .logo-text {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
 
     color: #f5f7fb;
@@ -144,7 +144,7 @@ body {
 
     color: #aab3c5;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
 
     transition: 0.2s ease;
@@ -155,7 +155,7 @@ body {
 
     margin-right: 5px;
 
-    font-size: 15px;
+    font-size: 17px;
 
     display: flex;
     align-items: center;
@@ -210,7 +210,7 @@ body {
 
     color: #aab3c5;
 
-    font-size: 12px;
+    font-size: 15px;
 
     text-align: left;
 
@@ -280,7 +280,7 @@ body {
 
     color: #d4d9e4;
 
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .notification:hover {
@@ -310,7 +310,7 @@ body {
 
     color: #8d7bff;
 
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
 }
 
@@ -322,13 +322,13 @@ body {
 }
 
 .profile-info strong {
-    font-size: 11px;
+    font-size: 14px;
 
     color: #f3f4f7;
 }
 
 .profile-info span {
-    font-size: 9px;
+    font-size: 13px;
 
     color: #9099aa;
 
@@ -370,7 +370,7 @@ body {
 }
 
 .panel h3 {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     color: #ffffff;
 
@@ -399,7 +399,7 @@ body {
     justify-content: center;
 
     color: #ffffff;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 700;
 
     flex-shrink: 0;
@@ -410,7 +410,7 @@ body {
 }
 
 .hero-info h1 {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 800;
     color: #ffffff;
 }
@@ -422,7 +422,7 @@ body {
 
     margin: 4px 0 7px;
 
-    font-size: 9px;
+    font-size: 13px;
     color: #aab3c5;
 }
 
@@ -444,7 +444,7 @@ body {
     background: #1c2232;
     color: #e5e9f2;
 
-    font-size: 8px;
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -454,8 +454,8 @@ body {
 }
 
 .stat-tile {
-    width: 48px;
-    padding: 8px 0 7px;
+    width: 86px;
+    padding: 10px 0 9px;
 
     background: #131a2a;
     border: 1px solid #222a3a;
@@ -465,8 +465,8 @@ body {
 }
 
 .stat-tile svg {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
 
     color: #8b7bff;
 }
@@ -474,7 +474,7 @@ body {
 .stat-tile strong {
     display: block;
 
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 800;
     color: #ffffff;
 
@@ -482,7 +482,7 @@ body {
 }
 
 .stat-tile span {
-    font-size: 6px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     color: #8993a5;
 }
@@ -493,9 +493,9 @@ body {
 .heatmap {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: repeat(7, 7px);
-    grid-auto-columns: 7px;
-    gap: 2.4px;
+    grid-template-rows: repeat(7, 11px);
+    grid-auto-columns: 11px;
+    gap: 3px;
 }
 
 .heat-cell {
@@ -528,13 +528,13 @@ body {
 .badge-card strong {
     display: block;
 
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 700;
     color: #ffffff;
 }
 
 .badge-card span {
-    font-size: 7px;
+    font-size: 13px;
     color: #9aa4b8;
 }
 
@@ -547,7 +547,7 @@ body {
 /* PREFERENCES */
 
 .pref-line {
-    font-size: 8.5px;
+    font-size: 13px;
     color: #9aa4b8;
 
     margin-bottom: 5px;
